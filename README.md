@@ -4,6 +4,8 @@ This AI-powered devtool analyzes your staged Git changes and generates commit me
 
 Stop writing "fix stuff" and start writing commits that help your teammates (and your futre self) understand what you did.
 
+Note: Use sparingly, when it makes sense to. If you can write a perfectly good commit message for a simple commit, do that instead. AutoCommit is best for those who prefer to do large commits or those in situations where they want to remember the details for an important milestone change.
+
 ## Features
 - Commit vs PR/MR mode - Generate anything from a concise commit message to a full on code-review-ready change request description
 - Interactive workflow - accept, edit (in nano), or retry generated messages (enjoy the step-by-step progress indicators)
@@ -88,10 +90,10 @@ components. Test the editor integration workflow and verify API key security in 
 ## ⚙️ Configuration Options
 AutoCommit offers several preset modes:
 
-Default - Balanced detail with technical focus and design rationale (15 bullet points max)
-Quick - Concise messages for rapid development (5 bullet points max)
-Detailed - Comprehensive explanations with narrative flow (30 bullet points max)
-Custom - Build your own configuration with specific preferences
+- Default - Balanced detail with technical focus and design rationale (15 bullet points max)
+- Quick - Concise messages for rapid development (5 bullet points max)
+- Detailed - Comprehensive explanations with narrative flow (30 bullet points max)
+- Custom - Build your own configuration with specific preferences
 
 ### Interactive Configuration
 When you run autocommit, you will be prompted to choose:
@@ -120,9 +122,9 @@ The setup wizard creates `.autocommitrc` in your project directory:
 
 The default temperature of 0.3 provides:
 
-✅ Consistent format - follows instructions reliably
-✅ Focused content - sticks to actual code changes
-✅ Less hallucination - won't make up features not in the diff
+- Consistent format - follows instructions reliably
+- Focused content - sticks to actual code changes
+- Less hallucination - won't make up features not in the diff
 
 ## Command Line Options
 ```bash
@@ -133,11 +135,11 @@ autocommit --version        # Show version
 
 ## Workflow Features
 
-Animated progress indicators - see exactly what the tool is doing
-Editor integration - opens nano for manual message editing
-Retry functionality - generate new versions until satisfied
-ASCII art borders - clearly distinguishes content from other terminal output
-Staged-only analysis - only analyzes git added changes
+- Animated progress indicators - see exactly what the tool is doing
+- Editor integration - opens nano for manual message editing
+- Retry functionality - generate new versions until satisfied
+- ASCII art borders - clearly distinguishes content from other terminal output
+- Staged-only analysis - only analyzes git added changes
 
 # 🎯 Why AutoCommit?
 
@@ -170,7 +172,9 @@ standardized footer implementations across all pages.
 
 # 🛠️ Architecture
 
-AutoCommit is built with a modular architecture:
+This is AutoCommit's "first stab" file structure.
+
+
 ```
 autocommit/
 ├── autocommit.mjs              # Main entry point
@@ -189,11 +193,16 @@ autocommit/
 ```
 
 # 🤝 Contributing
-We welcome contributions! Please see our Contributing Guide for details.
-Development Setup
-bashgit clone https://github.com/yourusername/autocommit-cli
+
+I welcome contributions! Please see our Contributing Guide for details.
+
+## Development Setup
+
+```bash
+git clone https://github.com/yourusername/autocommit-cli
 cd autocommit-cli
 npm install
+```
 
 ## Local Development
 ```bash
@@ -205,6 +214,7 @@ autocommit
 ```
 
 ## 📄 License
+
 MIT License - see LICENSE file for details.
 
 ## 🙏 Acknowledgments
@@ -215,8 +225,8 @@ Thanks to all contributors and the open source community
 
 # 🔗 Links
 
-- [GitHub Repository]()
+- [GitHub Repository](https://github.com/haejinjo/autocommit)
 - [npm Package]()
-- [Issues & Feature Requests]()
-- [Linkedin]()
-- [Website]()
+- [Issues & Feature Requests](https://github.com/haejinjo/autocommit/issues)
+- [Linkedin](https://www.linkedin.com/in/haejinjo/)
+- [Website](https://www.hejinjo.com/)
