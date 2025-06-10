@@ -1,0 +1,9 @@
+{
+    "provider": "claude", // or "gpt"
+    "model": "", // "anthropic.claude-3-7-sonnet-20250219-v1:0"
+    "temperature": 0.3, // Temperature 0.3: Low randomness for consistent, focused output that follows instructions reliably,
+                        // sticks to actual code changes, and avoids hallucinating features not in the diff
+    "openaiApiKey": "sk-...", // COnsider fil
+    "claudeApiKey": "sk-ant-...",
+    "targetBranch": "origin/main",
+  }
