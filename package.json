@@ -1,6 +1,6 @@
 {
     "name": "@npmhejin/autocommit",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Personal AI-powered Git commit message generator",
     "type": "module",
     "bin": {
@@ -21,7 +21,7 @@
     ],
     "author": "Your Name <your.email@example.com>",
     "license": "MIT",
-    "homepage": "https://github.com/haejinjo/autocommit",
+    "homepage": "https://www.hejinjo.com",
     "repository": {
       "type": "git",
       "url": "git+https://github.com/haejinjo/autocommit"
