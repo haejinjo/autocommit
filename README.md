@@ -16,7 +16,7 @@ Note: Use sparingly, when it makes sense to. If you can write a perfectly good c
 ## 🚀 Quick Start
 ### Installation
 ```bash
-npm install -g autocommit-cli
+npm install -g @npmhejin/autocommit
 ```
 ### Setup
 ```bash
@@ -226,7 +226,7 @@ Thanks to all contributors and the open source community
 # 🔗 Links
 
 - [GitHub Repository](https://github.com/haejinjo/autocommit)
-- [npm Package]()
+- [npm Package](https://www.npmjs.com/package/@npmhejin/autocommit)
 - [Issues & Feature Requests](https://github.com/haejinjo/autocommit/issues)
 - [Linkedin](https://www.linkedin.com/in/haejinjo/)
 - [Website](https://www.hejinjo.com/)

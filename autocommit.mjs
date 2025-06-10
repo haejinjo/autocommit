@@ -2,12 +2,58 @@
 import { getDiff } from './get-diff.mjs';
 import { loadConfig } from './config.mjs';
 import { getCommitMessage } from './llm-client.mjs';
-import fs from 'fs';
+import fs, { readFileSync } from 'fs';
 import os from 'os';
 import path from 'path';
 import { spawn, spawnSync } from 'child_process';
 import { getReadlineInterface, closeReadlineInterface } from './cli_interactions/readline-singleton.mjs';
 import { AsciiArt } from './cli_interactions/ascii-art.mjs';
+
+
+// Handle help and version FIRST, before any other logic
+if (process.argv.includes('--help') || process.argv.includes('-h')) {
+  console.log(`
+    AutoCommit CLI - AI-powered Git commit message generator
+
+    Inspects staged diff output (git diff --cached) to generate contextual commit messages
+    or MR descriptions for you to confirm, retry (sparingly!), or edit directly from the terminal.
+    
+    Usage:
+      autocommit              Generate commit message for staged changes
+      autocommit --setup      Run setup wizard to create .autocommitrc
+      autocommit --help       Show this help
+      autocommit --version    Show version
+    
+    Setup:
+      On first use, run 'autocommit --setup' to create .autocommitrc with your:
+      • AI provider (OpenAI or Claude) 
+      • API key
+      • Model and temperature preferences
+      • Target branch for diffs
+    
+      The .autocommitrc file can be modified anytime to update your settings.
+    
+    Examples:
+      # First time setup
+      autocommit --setup
+      
+      # Regular usage (requires .autocommitrc)
+      git add .
+      autocommit
+    
+    Requirements:
+      • .autocommitrc file (created via --setup)
+      • Staged git changes to analyze
+      • Valid API key for chosen AI provider
+    `);
+      process.exit(0);
+    }
+
+if (process.argv.includes('--version') || process.argv.includes('-v')) {
+  const pkg = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf-8'));
+  console.log(pkg.version);
+  process.exit(0);
+}
 
 if (process.argv.includes('--setup')) {
   const { runSetup } = await import('./setup.mjs');
